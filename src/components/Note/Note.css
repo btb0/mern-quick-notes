@@ -1,0 +1,14 @@
+.note-container {
+  display: flex;
+  align-items: center;
+  padding: 1vmin;
+  margin: 1vmin 0;
+  background-color: var(--tan-1);
+  border: .1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+}
+
+.note-date {
+  font-size: 14px;
+  color: gray;
+}

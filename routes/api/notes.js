@@ -6,7 +6,10 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 // All paths start with '/api/notes'
 
 // POST /api/notes
-router.post('/', notesCtrl.create);
+router.post('/', ensureLoggedIn, notesCtrl.create);
+
+// GET /api/notes
+router.get('/', ensureLoggedIn, notesCtrl.index);
 
 
 module.exports = router;

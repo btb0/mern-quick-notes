@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getUser } from '../../utilities/users-service';
 import * as notesAPI from "../../utilities/notes-api";
 
-export default function AddNoteForm({ setNotes }) {
+export default function AddNoteForm({ notes, setNotes }) {
   const [newNote, setNewNote] = useState({
     text: '',
     user: getUser()
@@ -18,7 +18,8 @@ export default function AddNoteForm({ setNotes }) {
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {
-      const note = await notesAPI.create(newNote)
+      const note = await notesAPI.create(newNote);
+      setNotes([...notes, note]);
     } catch {
       setError('Failed to Add Note - Please Try Again');
     }
