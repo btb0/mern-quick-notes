@@ -8,7 +8,11 @@ module.exports = {
 
 async function create(req, res) {
   try {
-    const note = await Note.create(req.body);
+    const newNote = {
+      text: req.body.newNote,
+      user: req.user._id
+    };
+    const note = await Note.create(newNote);
     res.json(note);
   } catch (err) {
     res.status(400).json(err);

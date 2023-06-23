@@ -6,5 +6,5 @@ export function index() {
 }
 
 export function create(newNote) {
-  return sendRequest(BASE_URL, 'POST', newNote);
+  return sendRequest(BASE_URL, 'POST', { newNote });
 }

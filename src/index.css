@@ -22,7 +22,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--tan-4);
-  padding: 2vmin;
+  padding: 0;
   height: 100vh;
 }
 
@@ -83,6 +83,8 @@ code {
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
+  margin-left: 2vmin;
+  margin-right: 2vmin;
 }
 
 p.error-message {

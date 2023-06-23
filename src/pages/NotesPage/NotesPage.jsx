@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import * as notesAPI from '../../utilities/notes-api';
-import { getUser } from '../../utilities/users-service';
 import AddNoteForm from "../../components/AddNoteForm/AddNoteForm";
 import ListOfNotes from "../../components/ListOfNotes/ListOfNotes";
 
@@ -17,6 +16,7 @@ export default function NotesPage() {
 
   return (
     <>
+      <AddNoteForm notes={notes} setNotes={setNotes} />
       {
         notes.length !== 0 ? 
         <div>
@@ -26,7 +26,6 @@ export default function NotesPage() {
         :
         <h2>No Notes Yet!</h2>
       }
-      <AddNoteForm notes={notes} setNotes={setNotes} />
     </>
   );
 }
