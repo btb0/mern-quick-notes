@@ -5,7 +5,8 @@ import ListOfNotes from "../../components/ListOfNotes/ListOfNotes";
 
 export default function NotesPage() {
   const [notes, setNotes] = useState([]);
-  console.log(notes)
+  const [sortOrder, setSortOrder] = useState('asc');
+
   useEffect(function() {
     async function getNotes() {
       const notes = await notesAPI.index();
@@ -14,12 +15,30 @@ export default function NotesPage() {
     getNotes()
   }, []);
 
+  function toggleOrder() {
+    const newOrder = sortOrder === 'asc' ? 'desc' : 'asc'
+    setSortOrder(newOrder);
+  }
+
+  function handleSort(evt) {
+    toggleOrder();
+    const formatNotes = notes.sort(function(a, b) {
+      const aDate = new Date(a.createdAt)
+      const bDate = new Date(b.createdAt)
+      
+      if (sortOrder === 'asc') return bDate - aDate
+      if (sortOrder === 'desc') return aDate - bDate
+    })
+    setNotes([...formatNotes]);
+  }
+
   return (
     <>
-      <AddNoteForm notes={notes} setNotes={setNotes} />
+      <AddNoteForm notes={notes} setNotes={setNotes} sortOrder={sortOrder} />
       {
         notes.length !== 0 ? 
         <div>
+          <button onClick={handleSort}>Sort</button>
           <h2>My Notes</h2>
           <ListOfNotes notes={notes} />
         </div>

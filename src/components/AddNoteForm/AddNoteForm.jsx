@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as notesAPI from "../../utilities/notes-api";
 import './AddNoteForm.css';
 
-export default function AddNoteForm({ notes, setNotes }) {
+export default function AddNoteForm({ notes, setNotes, sortOrder }) {
   const [newNote, setNewNote] = useState('');
 
   const [error, setError] = useState('');
@@ -16,7 +16,7 @@ export default function AddNoteForm({ notes, setNotes }) {
     evt.preventDefault();
     try {
       const note = await notesAPI.create(newNote);
-      setNotes([...notes, note]);
+      sortOrder === 'asc' ? setNotes([...notes, note]) : setNotes([note, ...notes]);
       setNewNote('');
     } catch {
       setError('Failed to Add Note - Please Try Again');
