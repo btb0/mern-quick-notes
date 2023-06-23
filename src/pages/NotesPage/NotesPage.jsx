@@ -40,7 +40,7 @@ export default function NotesPage() {
         <div>
           <button onClick={handleSort}>Sort</button>
           <h2>My Notes</h2>
-          <ListOfNotes notes={notes} />
+          <ListOfNotes notes={notes} setNotes={setNotes} />
         </div>
         :
         <h2>No Notes Yet!</h2>

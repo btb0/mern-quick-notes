@@ -8,3 +8,11 @@ export function index() {
 export function create(newNote) {
   return sendRequest(BASE_URL, 'POST', { newNote });
 }
+
+export function deleteNote(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
+
+export function edit(id, editNote) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', { editNote });
+}

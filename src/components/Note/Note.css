@@ -10,7 +10,31 @@
   margin-right: 2vmin;
 }
 
+.note-container input {
+  width: 156.75vmin;
+}
+
 .note-date {
   font-size: 14px;
   color: gray;
+}
+
+.delete-note {
+  position: absolute;
+  right: 27px;
+  font-size: 14px;
+}
+
+.delete-note:hover, .edit-note:hover {
+  transform: scale(1.1);
+}
+
+.delete-note:active, .edit-note:active  {
+  background-color: rgb(28, 28, 28);
+}
+
+.edit-note {
+  position: absolute;
+  right: 57px;
+  font-size: 14px;
 }

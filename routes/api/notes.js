@@ -11,5 +11,10 @@ router.post('/', ensureLoggedIn, notesCtrl.create);
 // GET /api/notes
 router.get('/', ensureLoggedIn, notesCtrl.index);
 
+// DELETE /api/notes/:id
+router.delete('/:id', ensureLoggedIn, notesCtrl.delete);
+
+// PUT /api/notes/:id
+router.put('/:id', ensureLoggedIn, notesCtrl.edit);
 
 module.exports = router;
