@@ -29,7 +29,7 @@ export default function AddNoteForm({ notes, setNotes, sortOrder }) {
         <form onSubmit={handleSubmit} >
           <label>Note</label>
           <input type="text" name="text" value={newNote} onChange={handleChange} required/>
-          <button type="submit">Add Note</button>
+          <button className="submit" type="submit">Add Note</button>
         </form>
       </div>
       <p className="error-message">{error}</p>

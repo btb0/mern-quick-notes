@@ -35,6 +35,17 @@
 
 .edit-note {
   position: absolute;
-  right: 57px;
+  right: 60px;
   font-size: 14px;
+}
+
+.logout {
+  margin-left: 25px;
+  background-color: white;
+  padding: 5px 10px;
+  color: black;
+}
+
+.logout:hover {
+  color: rgba(0, 0, 0, 0.7)
 }

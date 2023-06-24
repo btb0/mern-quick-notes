@@ -38,7 +38,9 @@ export default function NotesPage() {
       {
         notes.length !== 0 ? 
         <div>
-          <button onClick={handleSort}>Sort</button>
+          <button onClick={handleSort}>
+            {sortOrder === 'desc' ? 'Sort in Descending Order' : 'Sort in Ascending Order'}
+          </button>
           <h2>My Notes</h2>
           <ListOfNotes notes={notes} setNotes={setNotes} />
         </div>

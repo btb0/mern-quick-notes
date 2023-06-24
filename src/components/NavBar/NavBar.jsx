@@ -11,10 +11,10 @@ export default function NavBar({ user, setUser }) {
   }
   return (
     <nav>
-      <span>MERN Quick Notes</span>
+      <span className="title">Quick Notes</span>
       <span>Welcome, {user.name}</span>
       &nbsp;&nbsp;
-      <Link to="" onClick={handleLogOut}>Log Out</Link>
+      <Link className="logout" to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
   );
 }
